@@ -35,10 +35,10 @@ bot = Client(
 
 
 #port
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
+port = os.environ.get("PORT", 8080)
+app.run(host="0.0.0.0", port=8080)
 
-
+#commands
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
     editable = await m.reply_text(
